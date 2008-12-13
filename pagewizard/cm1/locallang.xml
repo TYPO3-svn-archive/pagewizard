@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for pagewizard module cm1</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="title">Create new Page</label>
+			<label index="function1">Create new page</label>
+			<label index="function2">Function #2</label>
+			<label index="function3">Function #3</label>
+			<label index="selectPosition">Select the position for the new page</label>
+			<label index="pageTitle">Enter page title</label>
+			<label index="submit">Create Page</label>
+			<label index="create_another">Create another Page</label>
+			<label index="edit_be">Edit Page in Backend</label>
+			<label index="open_fe">Open Page in Frontend</label>
+			<label index="success">Page creation successful</label>
+			<label index="select_preset">Please choose a preset page</label>
+			<label index="new_title">Adjust options for the new page</label>
+			<label index="pageOnly">Copy content?</label>
+			<label index="rootpageOnly">Not from rootpage</label>
+			<label index="allPages">Copy no content</label>
+			<label index="all">Copy no content</label>
+			<label index="none">Copy all content</label>
+			<label index="no_preset">No preset pages found in specified sysfolder</label>
+			<label index="no_ts_or_id">No page TS or no page id specified</label>
+			<label index="no_storage">No storage folder specified in page TS config</label>
+			<label index="subpages">Copy Subpages</label>
+			<label index="pagetype">Set type of new page</label>
+			<label index="leave">Don't change</label>
+			<label index="hidden">Hidden</label>
+			<label index="notinmenu">Not in menu</label>
+			<label index="pagetype_for">Change pagetype settings of</label>
+			<label index="rootpage">Rootpage only</label>
+			<label index="allpages">All pages</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="title">Neue Seite erstellen</label>
+			<label index="function1">Neue Seite erstellen</label>
+			<label index="function2">Function #2</label>
+			<label index="function3">Function #3</label>
+			<label index="selectPosition">Wählen Sie die Position der neuen Seite</label>
+			<label index="pageTitle">Titel der neuen Seite</label>
+			<label index="submit">Seite anlegen</label>
+			<label index="create_another">Eine weitere Seite erstellen</label>
+			<label index="edit_be">Seite im Backend bearbeiten</label>
+			<label index="open_fe">Seite im Frontend anzeigen</label>
+			<label index="success">Seite erfolgreich angelegt</label>
+			<label index="select_preset">Bitte wählen Sie ein Vorlagenseite</label>
+			<label index="new_title">Geben Sie die Eigenschaften für die neue Seite ein</label>
+			<label index="pageOnly">Inhalte kopieren?</label>
+			<label index="rootpageOnly">Nicht von Hauptseite</label>
+			<label index="allPages">Keine Inhalte kopieren</label>
+			<label index="all">Keine Inhalte kopieren</label>
+			<label index="none">Alle Inhalte kopieren</label>
+			<label index="no_preset">Keine Vorlagenseite im angegebenen Container gefunden!</label>
+			<label index="no_storage">Kein Vorlagencontainer angegeben im Seiten TSconfig!</label>
+			<label index="no_ts_or_id">Kein Page TS oder keine ID gefunden</label>
+			<label index="subpages">Unterseiten kopieren</label>
+			<label index="pagetype">Seitentyp einstellen</label>
+			<label index="leave">Übernehmen</label>
+			<label index="hidden">Versteckt</label>
+			<label index="notinmenu">Nicht im Menü</label>
+			<label index="pagetype_for">Seitentyp ändern von</label>
+			<label index="rootpage">Hauptseite</label>
+			<label index="allpages">Allen Seiten</label>
+		</languageKey>
+	</data>
+</T3locallang>
