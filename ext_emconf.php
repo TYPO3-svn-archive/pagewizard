@@ -1,18 +1,18 @@
 <?php
 
-########################################################################
-# Extension Manager/Repository config file for ext: "pagewizard"
-#
-# Auto generated 13-12-2008 09:13
-#
-# Manual updates:
-# Only the data in the array - anything else is removed by next write.
-# "version" and "dependencies" must not be touched!
-########################################################################
+/***************************************************************
+ * Extension Manager/Repository config file for ext "pagewizard".
+ *
+ * Auto generated 09-11-2013 20:04
+ *
+ * Manual updates:
+ * Only the data in the array - everything else is removed by next
+ * writing. "version" and "dependencies" must not be touched!
+ ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = array(
-	'title' => 'Page Wizard',
-	'description' => 'Create new page from predefined preset pages',
+	'title' => 'Page Tree Wizard',
+	'description' => 'Create new page tree from a set of template page trees',
 	'category' => 'be',
 	'shy' => 0,
 	'version' => '1.0.6',
@@ -20,16 +20,16 @@ $EM_CONF[$_EXTKEY] = array(
 	'conflicts' => '',
 	'priority' => '',
 	'loadOrder' => '',
-	'module' => 'cm1',
-	'state' => 'stable',
+	'module' => '',
+	'state' => 'beta',
 	'uploadfolder' => 0,
 	'createDirs' => '',
 	'modify_tables' => '',
 	'clearcacheonload' => 0,
 	'lockType' => '',
-	'author' => 'Dev-Team Typoheads',
-	'author_email' => 'dev@typoheads.at',
-	'author_company' => 'Typoheads GmbH',
+	'author' => 'Michiel Roos, Dev-Team Typoheads, Reinhard Führicht',
+	'author_email' => 'extensions@maxserv.nl',
+	'author_company' => 'MaxServ',
 	'CGLcompliance' => '',
 	'CGLcompliance_note' => '',
 	'constraints' => array(
@@ -40,7 +40,9 @@ $EM_CONF[$_EXTKEY] = array(
 		'suggests' => array(
 		),
 	),
-	'_md5_values_when_last_written' => 'a:19:{s:9:"ChangeLog";s:4:"067b";s:10:"README.txt";s:4:"ee2d";s:9:"Thumbs.db";s:4:"e9b1";s:24:"class.t3lib_tceforms.php";s:4:"36e0";s:27:"class.tx_pagewizard_cm1.php";s:4:"d04e";s:12:"ext_icon.gif";s:4:"1b05";s:14:"ext_tables.php";s:4:"1517";s:13:"locallang.xml";s:4:"325a";s:13:"cm1/Thumbs.db";s:4:"d884";s:25:"cm1/class.positionmap.php";s:4:"2c16";s:13:"cm1/clear.gif";s:4:"cc11";s:15:"cm1/cm_icon.gif";s:4:"591c";s:12:"cm1/conf.php";s:4:"0970";s:13:"cm1/index.php";s:4:"958a";s:17:"cm1/locallang.xml";s:4:"433b";s:13:"doc/Thumbs.db";s:4:"39cb";s:14:"doc/manual.sxw";s:4:"036c";s:19:"doc/wizard_form.dat";s:4:"497b";s:20:"doc/wizard_form.html";s:4:"addb";}',
+	'_md5_values_when_last_written' => 'a:15:{s:9:"ChangeLog";s:4:"53b0";s:16:"ext_autoload.php";s:4:"a1db";s:12:"ext_icon.gif";s:4:"1b05";s:14:"ext_tables.php";s:4:"4812";s:24:"ext_typoscript_setup.txt";s:4:"6221";s:43:"Classes/Controller/PageWizardController.php";s:4:"e882";s:29:"Classes/Domain/Model/Page.php";s:4:"73bc";s:44:"Classes/Domain/Repository/PageRepository.php";s:4:"f170";s:49:"Resources/Private/Backend/Layouts/PageWizard.html";s:4:"46ae";s:58:"Resources/Private/Backend/Templates/PageWizard/Create.html";s:4:"e74f";s:57:"Resources/Private/Backend/Templates/PageWizard/Index.html";s:4:"8c0a";s:40:"Resources/Private/Language/locallang.xml";s:4:"1ba9";s:41:"Resources/Public/Images/clickMenuIcon.gif";s:4:"591c";s:46:"Resources/Public/StyleSheets/Backend/Style.css";s:4:"c5a9";s:14:"doc/manual.sxw";s:4:"c294";}',
+	'suggests' => array(
+	),
 );
 
 ?>

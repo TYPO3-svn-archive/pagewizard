@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<T3locallang>
+	<meta type='array'>
+		<type>module</type>
+		<description>Language labels for extension 'pagewizard'</description>
+	</meta>
+	<data type='array'>
+		<languageKey index='default' type='array'>
+			<label index='copyMode'>Copy mode</label>
+			<label index='copyPagesAndContent'>Copy pages and content</label>
+			<label index='copyPagesOnly'>Copy pages only</label>
+			<label index='createPageTree'>Create the Page Tree</label>
+			<label index='mlang_labels_tabdescr'>Create Predefined Page Trees</label>
+			<label index='mlang_tabs_tab'>Page Tree Wizard</label>
+			<label index='noTemplatesFoundMsgBody'>Please place some predefined page trees in the storage folder with uid %s.</label>
+			<label index='noTemplatesFoundMsgTitle'>No predefined page trees found</label>
+			<label index='pageWizard'>Page Tree Wizard</label>
+			<label index='selectPosition'>Select a position for the new page tree</label>
+			<label index='selectPreset'>Select a page or tree to create</label>
+			<label index='storagePidNotSet'>The storage page is not set in the TypoScript confiugation of the pagewizard module. Please set a storagePid in TypoSript.</label>
+			<label index='title'>New Page Tree</label>
+		</languageKey>
+		<languageKey index='nl' type='array'>
+			<label index='copyMode'>Kopieer vorm</label>
+			<label index='copyPagesAndContent'>Kopieer pagina's en inhoud</label>
+			<label index='copyPagesOnly'>Kopieer alleen pagina's</label>
+			<label index='createPageTree'>Maak de Pagina Boom</label>
+			<label index='mlang_labels_tabdescr'>Maak voorgedefinieerde pagina bomen aan</label>
+			<label index='mlang_tabs_tab'>Pagina Boom Wizard</label>
+			<label index='noTemplatesFoundMsgBody'>Plaats voorgedefinieerde pagina bomen in de map of pagina met de uid %s.</label>
+			<label index='noTemplatesFoundMsgTitle'>Geen voorgedefinieerde pagina bomen gevonden</label>
+			<label index='pageWizard'>Pagina Boom Wizard</label>
+			<label index='selectPosition'>Kies een positie voor de nieuwe pagina boom</label>
+			<label index='selectPreset'>Kies een pagina of paginaboom om te kopiëren</label>
+			<label index='storagePidNotSet'>De opslag-pagina/map is niet ingesteld in de TypoScript confiugatie van de pagewizard module. Stel een storagePid in in TypoScript.</label>
+			<label index='title'>Nieuwe Pagina Boom</label>
+		</languageKey>
+		<languageKey index='de' type='array'>
+			<label index='title'>Neue Seite</label>
+		</languageKey>
+	</data>
+</T3locallang>

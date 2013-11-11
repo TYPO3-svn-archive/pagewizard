@@ -1,0 +1,27 @@
+/**
+ * Extbase configuration
+ */
+config.tx_extbase {
+	persistence {
+		classes {
+			Tx_Pagewizard_Domain_Model_Page {
+				mapping {
+					tableName = pages
+				}
+			}
+		}
+	}
+}
+
+module.tx_pagewizard {
+	persistence {
+			// Default is 999999999 so we can test against the storagePid not
+			// being set in the FLUID template.
+		storagePid = 999999999
+	}
+	view {
+		templateRootPath = EXT:pagewizard/Resources/Private/Backend/Templates/
+		partialRootPath = EXT:pagewizard/Resources/Private/Partials/
+		layoutRootPath = EXT:pagewizard/Resources/Private/Backend/Layouts/
+	}
+}
