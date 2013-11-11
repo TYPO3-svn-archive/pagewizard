@@ -20,8 +20,16 @@ module.tx_pagewizard {
 		storagePid = 999999999
 	}
 	view {
-		templateRootPath = EXT:pagewizard/Resources/Private/Backend/Templates/
+		templateRootPath = EXT:pagewizard/Resources/Private/Backend/Templates/4.5/
 		partialRootPath = EXT:pagewizard/Resources/Private/Partials/
 		layoutRootPath = EXT:pagewizard/Resources/Private/Backend/Layouts/
 	}
 }
+
+[compatVersion = 4.6]
+module.tx_pagewizard {
+	view {
+		templateRootPath = EXT:pagewizard/Resources/Private/Backend/Templates/
+	}
+}
+[global]

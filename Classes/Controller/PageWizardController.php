@@ -71,9 +71,17 @@ class Tx_Pagewizard_Controller_PageWizardController extends
 
 		$get = t3lib_div::_GET();
 		$id = intval($get['id']);
-		$values['positionPid'] = intval($get['positionPid']);
-			// Can only be: crPage, hardcoded in: class.t3lib_positionmap.php
-		$values['command'] = $get['cmd'];
+
+		if (count($get['edit']['pages'])) {
+			$values['positionPid'] = key($get['edit']['pages']);
+			$values['command'] = 'crPage';
+		} else {
+				// This code is called when an extension overrides the
+				// newPageWiz.overrideWithExtension
+			$values['positionPid'] = intval($get['positionPid']);
+				// Can only be: crPage, hardcoded in: class.t3lib_positionmap.php
+			$values['command'] = $get['cmd'];
+		}
 
 		switch ($values['command']) {
 			case 'crPage':
@@ -113,12 +121,12 @@ class Tx_Pagewizard_Controller_PageWizardController extends
 					// Show position chooser
 				$pageRecord = t3lib_BEfunc::readPageAccess($id, $GLOBALS['BE_USER']->getPagePermsClause(1));
 
-				$values['positionMap'] = $positionMap->positionTree(
+				$values['positionMap'] = $this->processPositionMapLinks($positionMap->positionTree(
 					t3lib_div::_GET('id'),
 					$pageRecord,
 					$GLOBALS['BE_USER']->getPagePermsClause($id),
 					t3lib_div::getIndpEnv('REQUEST_URI')
-				);
+				));
 		}
 		$this->view->assignMultiple($values);
 	}
@@ -162,7 +170,11 @@ class Tx_Pagewizard_Controller_PageWizardController extends
 			$tce->neverHideAtCopy = 1;
 		}
 
-		$tce->copyTree = t3lib_utility_Math::forceIntegerInRange($GLOBALS['BE_USER']->uc['copyLevels'], 0, 100);
+		if (t3lib_div::compat_version('4.6')) {
+			$tce->copyTree = t3lib_utility_Math::forceIntegerInRange($GLOBALS['BE_USER']->uc['copyLevels'], 0, 100);
+		} else {
+			$tce->copyTree = t3lib_div::intInRange($GLOBALS['BE_USER']->uc['copyLevels'], 0, 100);
+		}
 
 			// Copy this page we're on. And set first-flag (this will trigger that
 			// the record is hidden if that is configured)!
@@ -201,7 +213,7 @@ class Tx_Pagewizard_Controller_PageWizardController extends
 		}
 
 			// Directly jump to edit mode of the created page
-		$uri = '/typo3/alt_doc.php?returnUrl=' .
+		$uri = 'alt_doc.php?returnUrl=' .
 			urlencode('/typo3/sysext/cms/layout/db_layout.php?id=' . $theNewRootId) .
 			'&edit[pages][' . $theNewRootId . ']=edit';
 		$this->redirectToUri($uri);
@@ -220,6 +232,40 @@ class Tx_Pagewizard_Controller_PageWizardController extends
 			$content = preg_replace('/\?PM/', '&PM', $content);
 		}
 		return $content;
+	}
+
+	/**
+	 * Processes the positionMap links replaces alt_doc.php with our own module
+	 * Case 1, default:
+	 * window.location.href='alt_doc.php?
+	 * - returnUrl=%2Ftypo3%2Fmod.php%3FM%3Dweb_PagewizardTxPagewizard%26id%3D39881&
+	 * - edit[pages][39881]=new&
+	 * - returnNewPageId=1
+	 *
+	 * Case 2, newPageWiz.overrideWithExtension was set
+	 * window.location.href='../typo3conf/ext/www_tue_nl/mod1/index.php?
+	 * - cmd=crPage&
+	 * - positionPid=39833
+	 *
+	 * @param string  $content Content to be processed
+	 *
+	 * @return string The processed and modified content
+	 */
+	protected function processPositionMapLinks($content) {
+		$search = array(
+			'/window\.location\.href=\'([^?]*)\?/',
+			'/positionPid=(-?)([0-9]+)\'/',
+			'/alt_doc\.php\?/',
+			'/edit\[pages\]\[(-?)([0-9]+)\]=([a-z]+)&/'
+		);
+
+		$replace = array(
+			'window.location.href=\'mod.php?M=web_PagewizardTxPagewizard&amp;',
+			'positionPid=$1$2&id=$2\'',
+			'mod.php?M=web_PagewizardTxPagewizard&amp;',
+			'edit[pages][$1$2]=$3&id=$2&amp;'
+		);
+		return preg_replace($search, $replace, $content);
 	}
 }
 
