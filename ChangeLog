@@ -1,4 +1,7 @@
-2013-11-8  Michiel Roos <michiel@maxserv.nl>
+2013-11-13  Michiel Roos <extensions@maxserv.nl>
+	* Fix Typo in manual
+
+2013-11-8  Michiel Roos <extensions@maxserv.nl>
 	* Complete rewrite in ExtBase/FLUID
 
 07-08-07   <>
