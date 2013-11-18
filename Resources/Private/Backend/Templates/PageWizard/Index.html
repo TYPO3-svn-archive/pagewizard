@@ -1,3 +1,4 @@
+{namespace pageWizard=Tx_Pagewizard_ViewHelpers}
 <f:layout name="PageWizard"/>
 
 <f:section name="iconButtons">
@@ -50,7 +51,7 @@ module.tx_pagewizard {
 																	<label class="t3-form-palette-field-label class-main3" for="tx_pagewizard_pageWizard_templateId{template.page.uid}">
 																		<strong>{template.page.title}</strong>
 																	</label>
-																	<f:format.raw>{template.tree}</f:format.raw>
+																	<pageWizard:format.raw value="{template.tree}"/>
 																</f:for>
 															</td>
 														</tr>
@@ -119,7 +120,7 @@ module.tx_pagewizard {
 											<tr class="class-main2">
 												<td class="palette-header">
 													<h3><f:translate key="selectPosition" /></h3>
-													<f:format.raw>{positionMap}</f:format.raw>
+													<pageWizard:format.raw value="{positionMap}"/>
 												</td>
 											</tr>
 										</table>

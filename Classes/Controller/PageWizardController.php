@@ -93,6 +93,7 @@ class Tx_Pagewizard_Controller_PageWizardController extends
 				$tree = t3lib_div::makeInstance('t3lib_browsetree');
 					// Also store tree prefix markup:
 				$tree->makeHTML = 2;
+				$tree->expandFirst = TRUE;
 				$tree->init();
 				$tree->ext_IconMode = TRUE;
 				$tree->ext_showPageId = $GLOBALS['BE_USER']->getTSConfigVal('options.pageTree.showPageIdWithTitle');
@@ -110,12 +111,8 @@ class Tx_Pagewizard_Controller_PageWizardController extends
 					}
 					$tree->setTreeName('pagewizard_' . $uid);
 
-						// Creating top icon; the current page
-					$tree->getBrowsableTree();
-
-					$values['pageTemplates'][$uid]['tree'] = $this->processExpandCollapseLinks($tree->printTree(), $uid);
+					$values['pageTemplates'][$uid]['tree'] = $this->processExpandCollapseLinks($tree->getBrowsableTree(), $uid);
 				}
-
 				break;
 			default:
 					// Show position chooser
@@ -229,7 +226,7 @@ class Tx_Pagewizard_Controller_PageWizardController extends
 	 */
 	protected function processExpandCollapseLinks($content, $uid) {
 		if (strpos($content, '?PM=') !== FALSE && $uid > 0) {
-			$content = preg_replace('/\?PM/', '&PM', $content);
+			$content = str_replace('?PM', '&PM', $content);
 		}
 		return $content;
 	}

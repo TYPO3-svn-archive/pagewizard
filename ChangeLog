@@ -1,3 +1,8 @@
+2013-11-18  Michiel Roos <extensions@maxserv.nl>
+	* Remove condition to detect TYPO3 version
+	* Always expand first level of trees
+	* Updated manual
+
 2013-11-13  Michiel Roos <extensions@maxserv.nl>
 	* Fix Typo in manual
 
