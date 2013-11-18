@@ -15,13 +15,13 @@ $EM_CONF[$_EXTKEY] = array(
 	'description' => 'Create new page tree from a set of template page trees',
 	'category' => 'be',
 	'shy' => 0,
-	'version' => '2.0.0',
+	'version' => '2.0.1',
 	'dependencies' => '',
 	'conflicts' => '',
 	'priority' => '',
 	'loadOrder' => '',
 	'module' => '',
-	'state' => 'beta',
+	'state' => 'stable',
 	'uploadfolder' => 0,
 	'createDirs' => '',
 	'modify_tables' => '',
@@ -35,6 +35,8 @@ $EM_CONF[$_EXTKEY] = array(
 	'constraints' => array(
 		'depends' => array(
 			'typo3' => '4.5.0-6.2.99',
+			'extbase' => '',
+			'fluid' => ''
 		),
 		'conflicts' => array(
 		),
